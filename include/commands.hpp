@@ -17,8 +17,8 @@ typedef struct command{
 
 // commands
 std::vector<std::string> first_words = {
-    "DROP", "CREATE", "RENAME", "ALTER",
-    "UPDATE", "SELECT", "INSERT"};
+    "SHOW", "DESCRIBE", "DROP", "CREATE", "RENAME", 
+    "ALTER", "UPDATE", "SELECT", "INSERT"};
 
 
 int findCommand(std::vector<std::string> user_command){

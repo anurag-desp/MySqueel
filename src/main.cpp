@@ -23,6 +23,7 @@ int main(void)
     // newer.getName();
     // new_database.getName();
     std::string str;
+    std::cout << "> ";
     std::getline(std::cin >> std::ws, str);
 
     std::vector<std::string> command = splitString(str, ' ');
