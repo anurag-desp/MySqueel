@@ -22,11 +22,21 @@ int main(void)
     // Database newer;
     // newer.getName();
     // new_database.getName();
-    std::string str;
-    std::cout << "> ";
-    std::getline(std::cin >> std::ws, str);
+    std::string str = "";
+    Database new_database("mydb");
+    while(true){
+        std::cout << "> ";
+        std::getline(std::cin >> std::ws, str);
 
-    std::vector<std::string> command = splitString(str, ' ');
-    std::cout << findCommand(command) << std::endl;
+        if(str == "EXIT();" || str == "exit();"){
+            std::cout << "Closing..." << std::endl;
+            break;
+        }
+
+        std::vector<std::string> command = splitString(str, ' ');
+        std::cout << findCommand(command) << std::endl;
+
+        std::cout << runCommand(findCommand(command), command, new_database) << std::endl;
+    }
     return 0;
 }
